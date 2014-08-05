@@ -1,0 +1,1 @@
+Mean median and mode calculator. 
