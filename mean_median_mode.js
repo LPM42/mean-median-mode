@@ -1,4 +1,11 @@
-var numbers = [342, 2, 3, 4, 34, 34235, 23, 3, 5, 5];
+var stringNumbers = process.argv;
+
+stringNumbers.shift();
+stringNumbers.shift();
+
+var numbers = stringNumbers.map(function (x) {
+  return parseInt(x, 10);
+});
 
 function mean(numbers) {
   var sum = 0;
@@ -52,6 +59,7 @@ function mode(numbers) {
 }
 
 // Help from: 
+// http://stackoverflow.com/questions/9593765/how-to-convert-array-values-from-string-to-int 
 // https://gist.github.com/caseyjustus/1166258
 // http://stackoverflow.com/questions/1053843/get-the-element-with-the-highest-occurrence-in-an-array
 
