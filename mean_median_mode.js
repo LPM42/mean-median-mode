@@ -1,12 +1,16 @@
 var stringNumbers = process.argv;
 
+// Remove "node" and "fileName" from process.argv array
 stringNumbers.shift();
 stringNumbers.shift();
 
+
+// Convert strings from process.argv to integers
 var numbers = stringNumbers.map(function (x) {
   return parseInt(x, 10);
 });
 
+// Calculate mean
 function mean(numbers) {
   var sum = 0;
   for (var i = 0; i < numbers.length; i++) {
@@ -16,6 +20,7 @@ function mean(numbers) {
   return average;
 }
 
+// Calculate median
 function median(numbers) {
   numbers.sort(function (a,b){
     return a - b;
@@ -30,6 +35,7 @@ function median(numbers) {
   }
 }
 
+// Calculate mode (with clause in case of 2 equal modes)
 function mode(numbers) {
     var modeMap = {};
     var maxNum = numbers[0], maxCount = 1;
