@@ -14,7 +14,7 @@ function mean(numbers) {
   }
   var average = sum/numbers.length;
   return average;
-};
+}
 
 function median(numbers) {
   numbers.sort(function (a,b){
@@ -42,9 +42,6 @@ function mode(numbers) {
       if (modeMap[num] == null) {
         modeMap[num] = 1;
       }
-      else {
-        modeMap[num]++;  
-      }
 
       if (modeMap[num] > maxCount) {
         maxNum = num;
@@ -53,6 +50,9 @@ function mode(numbers) {
       else if (modeMap[num] == maxCount) {
         maxNum += ' and ' + num;
         maxCount = modeMap[num];
+      }
+       else {
+        modeMap[num]++;  
       }
     }
     return maxNum;
